@@ -16,3 +16,32 @@ For extra credit, create a conditional that executes a message if the sum is ove
 ********************/
 
 // Your Solution:
+function conditionalMessage(x){
+  let m = '';
+  if(x>10){
+    m = "Sum>10";
+  } else if(x<100){
+    m = "Sum<100";
+  }
+  console.log(m)
+  return m;
+}
+function sum(a,b){
+  let sum = a+b;
+  console.log(sum);
+  return sum;
+}
+
+let sumBtn = () => {
+  let a = 0;
+  a = parseInt(document.getElementById('a').value);
+  let b = 0;
+  b = parseInt(document.getElementById('b').value);
+  c = sum(a,b);
+  document.getElementById('c').innerText += c.toString();
+  document.getElementById('m').innerText += conditionalMessage(c);
+}
+
+document.getElementById('sum').onclick = sumBtn;
+
+
